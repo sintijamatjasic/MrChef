@@ -13,6 +13,7 @@ defineProps({
       key="recipe.id"
       :recipe="recipe"
       @toggle-favorite="$emit('toggle-favorite', $event)"
+      @view-recipe="$emit('view-recipe', $event)"
     />
   </div>
 </template>

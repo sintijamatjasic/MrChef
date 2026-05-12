@@ -43,4 +43,21 @@ img {
 #app {
   min-height: 100vh;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4ece2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8ab90;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b48f70;
+}
 </style>

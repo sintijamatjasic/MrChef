@@ -23,7 +23,7 @@ defineProps({
         </div>
 
         <div class="recipe-bottom">
-          <span></span>
+          <button class="filter-btn" @click="$emit('view-recipe', recipe)">View</button>
 
           <button
             @click="$emit('toggle-favorite', recipe.id)"
@@ -48,8 +48,9 @@ defineProps({
     0 18px 34px rgba(79, 50, 26, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
   transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .yellow {
@@ -57,8 +58,8 @@ defineProps({
 }
 
 .recipe-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 24px 40px rgba(79, 50, 26, 0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 40px rgba(79, 50, 26, 0.14);
 }
 
 .recipe-image {
@@ -66,6 +67,11 @@ defineProps({
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: #f0e5d8;
+  transition: transform 0.35s ease;
+}
+
+.recipe-card:hover .recipe-image {
+  transform: scale(1.05);
 }
 
 .recipe-content {
@@ -125,7 +131,33 @@ defineProps({
   justify-content: space-between;
   align-items: center;
   gap: 0.75rem;
-  margin-top: 0.2rem;
+  margin-top: 2rem;
+}
+
+.filter-btn {
+  border: 1px solid rgba(128, 93, 62, 0.12);
+  background: #fffdf9;
+  color: #6a5646;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 18px rgba(79, 50, 26, 0.05);
+}
+
+.filter-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(153, 98, 58, 0.28);
+  color: #2f2218;
+}
+
+.filter-btn.active {
+  background: linear-gradient(180deg, #c9834d, #b56d38);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 12px 22px rgba(181, 109, 56, 0.18);
 }
 
 .favorite-btn {

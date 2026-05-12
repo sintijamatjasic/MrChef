@@ -9,6 +9,26 @@ export const recipesData = [
     servings: 4,
     favorite: false,
     image: 'https://www.inspiredtaste.net/wp-content/uploads/2025/07/Pancake-Recipe-1.jpg',
+    description:
+      'Soft, fluffy pancakes with a buttery finish. Perfect for a cozy breakfast with maple syrup and fresh fruit.',
+    ingredients: [
+      'all-purpose flour',
+      'baking powder',
+      'sugar',
+      'milk',
+      'eggs',
+      'butter',
+      'vanilla extract',
+      'salt',
+    ],
+    instructions: [
+      'Whisk the flour, baking powder, sugar, and salt in a bowl.',
+      'In another bowl, mix the milk, eggs, melted butter, and vanilla.',
+      'Pour the wet ingredients into the dry ingredients and stir until just combined.',
+      'Heat a lightly buttered pan over medium heat.',
+      'Cook small rounds of batter until bubbles form, then flip and cook until golden.',
+      'Serve warm with syrup, fruit, or butter.',
+    ],
   },
   {
     id: 2,
@@ -20,6 +40,24 @@ export const recipesData = [
     servings: 2,
     favorite: true,
     image: 'https://www.giallozafferano.com/images/273-27388/Avocado-toast_650x433_wm.jpg',
+    description:
+      'Crunchy toasted bread topped with creamy avocado, lemon, and seasoning. A quick breakfast that feels fresh and filling.',
+    ingredients: [
+      'bread',
+      'avocado',
+      'lemon juice',
+      'olive oil',
+      'chili flakes',
+      'salt',
+      'black pepper',
+    ],
+    instructions: [
+      'Toast the bread until crisp and golden.',
+      'Mash the avocado with lemon juice, salt, and pepper.',
+      'Spread the avocado mixture over the toast.',
+      'Drizzle with olive oil and add chili flakes if desired.',
+      'Serve immediately while the toast is still crisp.',
+    ],
   },
   {
     id: 3,
@@ -31,6 +69,23 @@ export const recipesData = [
     servings: 2,
     favorite: false,
     image: 'https://www.purelykaylie.com/wp-content/uploads/2021/05/berry-smoothie-bowl-5.jpg',
+    description:
+      'A thick, fruity smoothie bowl topped with berries and crunchy toppings. Bright, refreshing, and easy to customize.',
+    ingredients: [
+      'frozen mixed berries',
+      'banana',
+      'greek yogurt',
+      'milk',
+      'honey',
+      'granola',
+      'chia seeds',
+    ],
+    instructions: [
+      'Blend the frozen berries, banana, yogurt, milk, and honey until thick and smooth.',
+      'Pour the smoothie into serving bowls.',
+      'Top with granola, extra berries, and chia seeds.',
+      'Serve immediately before the toppings soften.',
+    ],
   },
   {
     id: 4,
@@ -43,6 +98,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://images.immediate.co.uk/production/volatile/sites/2/2020/10/Healthy-Vegetable-Omelette-e8d6b9c.jpg?resize=1366,1242',
+    description:
+      'A light omelette packed with vegetables and herbs. Great for a quick savory breakfast or simple brunch.',
+    ingredients: [
+      'eggs',
+      'bell pepper',
+      'spinach',
+      'onion',
+      'cheese',
+      'olive oil',
+      'salt',
+      'pepper',
+    ],
+    instructions: [
+      'Whisk the eggs with salt and pepper.',
+      'Sauté the onion and bell pepper in olive oil until softened.',
+      'Add spinach and cook briefly until wilted.',
+      'Pour in the eggs and cook over low to medium heat.',
+      'Sprinkle cheese on top, fold the omelette, and serve warm.',
+    ],
   },
   {
     id: 5,
@@ -54,6 +128,16 @@ export const recipesData = [
     servings: 3,
     favorite: false,
     image: 'https://cdn.loveandlemons.com/wp-content/uploads/2024/08/french-toast-recipe.jpg',
+    description:
+      'Golden slices of bread dipped in a cinnamon egg mixture and pan-fried until crisp outside and soft inside.',
+    ingredients: ['bread', 'eggs', 'milk', 'cinnamon', 'vanilla extract', 'butter', 'maple syrup'],
+    instructions: [
+      'Whisk the eggs, milk, cinnamon, and vanilla together in a shallow dish.',
+      'Dip each slice of bread into the mixture, coating both sides.',
+      'Heat butter in a skillet over medium heat.',
+      'Cook the bread until golden brown on both sides.',
+      'Serve warm with maple syrup.',
+    ],
   },
   {
     id: 6,
@@ -65,6 +149,23 @@ export const recipesData = [
     servings: 2,
     favorite: false,
     image: 'https://cdn.loveandlemons.com/wp-content/uploads/2024/12/caesar-salad-500x500.jpg',
+    description:
+      'Crisp romaine lettuce tossed in a creamy Caesar dressing with croutons and parmesan. Fresh, crunchy, and classic.',
+    ingredients: [
+      'romaine lettuce',
+      'parmesan',
+      'croutons',
+      'caesar dressing',
+      'lemon juice',
+      'black pepper',
+    ],
+    instructions: [
+      'Wash and chop the romaine lettuce.',
+      'Place the lettuce in a large bowl and toss with Caesar dressing.',
+      'Add croutons and shaved parmesan.',
+      'Finish with lemon juice and black pepper.',
+      'Serve immediately while crisp.',
+    ],
   },
   {
     id: 7,
@@ -77,6 +178,23 @@ export const recipesData = [
     favorite: true,
     image:
       'https://rachaelsgoodeats.com/wp-content/uploads/2024/04/240415_southwest-chicken-wrap-16.jpg',
+    description:
+      'A satisfying wrap filled with seasoned chicken, crisp vegetables, and a creamy sauce. Ideal for a quick lunch.',
+    ingredients: [
+      'tortillas',
+      'chicken breast',
+      'lettuce',
+      'tomato',
+      'cheddar cheese',
+      'yogurt sauce',
+    ],
+    instructions: [
+      'Cook the chicken breast until golden and fully cooked, then slice it.',
+      'Warm the tortillas briefly so they are easy to roll.',
+      'Layer lettuce, tomato, cheese, chicken, and yogurt sauce in the center.',
+      'Fold in the sides and roll tightly into wraps.',
+      'Slice in half and serve.',
+    ],
   },
   {
     id: 8,
@@ -89,6 +207,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://joyfoodsunshine.com/wp-content/uploads/2021/02/best-homemade-tomato-soup-recipe-1x1-1-500x500.jpg',
+    description:
+      'A comforting tomato soup with a smooth texture and rich flavor. Perfect with grilled cheese on the side.',
+    ingredients: [
+      'tomatoes',
+      'onion',
+      'garlic',
+      'vegetable broth',
+      'cream',
+      'olive oil',
+      'basil',
+      'salt',
+    ],
+    instructions: [
+      'Sauté the onion and garlic in olive oil until softened.',
+      'Add the tomatoes and cook until they begin to break down.',
+      'Pour in the broth and simmer for 15 minutes.',
+      'Blend the soup until smooth.',
+      'Stir in cream, basil, and salt, then serve hot.',
+    ],
   },
   {
     id: 9,
@@ -101,6 +238,16 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.allrecipes.com/thmb/pnEUcAXDg5GUJ77fUDzZp41NWkE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-238891-Grilled-Cheese-Sandwich-beauty-4x3-362f705972e64a948b7ec547f7b2a831.jpg',
+    description:
+      'Crispy toasted bread with melted cheese in the middle. Simple, nostalgic, and always satisfying.',
+    ingredients: ['bread', 'cheddar cheese', 'butter', 'mozzarella', 'black pepper'],
+    instructions: [
+      'Butter one side of each bread slice.',
+      'Layer the cheeses between the unbuttered sides of the bread.',
+      'Cook in a skillet over medium heat until golden on one side.',
+      'Flip and cook until the second side is golden and the cheese is melted.',
+      'Slice and serve warm.',
+    ],
   },
   {
     id: 10,
@@ -113,6 +260,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.emilieeats.com/wp-content/uploads/2016/09/greek_quinoa_buddha_bowl_vegan_gluten_free-1.jpg',
+    description:
+      'A wholesome bowl with fluffy quinoa, fresh vegetables, and a flavorful dressing. Balanced, colorful, and filling.',
+    ingredients: [
+      'quinoa',
+      'cucumber',
+      'chickpeas',
+      'avocado',
+      'tomatoes',
+      'spinach',
+      'olive oil',
+      'lemon juice',
+    ],
+    instructions: [
+      'Cook the quinoa according to package instructions and let it cool slightly.',
+      'Prepare the vegetables and drain the chickpeas.',
+      'Arrange quinoa, vegetables, chickpeas, and avocado in bowls.',
+      'Whisk olive oil and lemon juice together for a quick dressing.',
+      'Drizzle the dressing over the bowls and serve.',
+    ],
   },
   {
     id: 11,
@@ -124,6 +290,25 @@ export const recipesData = [
     servings: 4,
     favorite: true,
     image: 'https://img.taste.com.au/5qlr1PkR/taste/2016/11/spaghetti-bolognese-106560-1.jpeg',
+    description:
+      'Classic spaghetti tossed with a rich beef and tomato sauce. Hearty, comforting, and perfect for family dinners.',
+    ingredients: [
+      'spaghetti',
+      'ground beef',
+      'onion',
+      'garlic',
+      'tomato sauce',
+      'olive oil',
+      'parmesan',
+      'basil',
+    ],
+    instructions: [
+      'Cook the spaghetti in salted boiling water until al dente.',
+      'Sauté onion and garlic in olive oil until soft.',
+      'Add the ground beef and cook until browned.',
+      'Stir in tomato sauce and simmer until thick and flavorful.',
+      'Toss with spaghetti and serve with parmesan and basil.',
+    ],
   },
   {
     id: 12,
@@ -136,6 +321,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://assets.bonappetit.com/photos/5d4ddd602c815a00080f9771/3:2/w_3131,h_2087,c_limit/BA-0919-Creamy-Pasta-Crispy-Mushroom-Playbook.jpg',
+    description:
+      'Silky pasta coated in a creamy mushroom sauce with garlic and parmesan. Cozy, savory, and restaurant-worthy.',
+    ingredients: [
+      'pasta',
+      'mushrooms',
+      'garlic',
+      'cream',
+      'parmesan',
+      'butter',
+      'parsley',
+      'black pepper',
+    ],
+    instructions: [
+      'Cook the pasta until al dente and reserve a little pasta water.',
+      'Sauté mushrooms in butter until golden and tender.',
+      'Add garlic and cook briefly until fragrant.',
+      'Pour in cream and stir in parmesan until the sauce thickens.',
+      'Toss with the pasta, adding pasta water if needed, and finish with parsley.',
+    ],
   },
   {
     id: 13,
@@ -147,6 +351,24 @@ export const recipesData = [
     servings: 2,
     favorite: false,
     image: 'https://whatmollymade.com/wp-content/uploads/2025/06/grilled-salmon-4.jpg',
+    description:
+      'Tender grilled salmon with crisp edges and bright seasoning. A quick dinner that feels light and elegant.',
+    ingredients: [
+      'salmon fillets',
+      'olive oil',
+      'lemon',
+      'garlic',
+      'paprika',
+      'salt',
+      'black pepper',
+    ],
+    instructions: [
+      'Pat the salmon dry and brush with olive oil.',
+      'Season with garlic, paprika, salt, and black pepper.',
+      'Grill over medium heat until the salmon is cooked through and lightly charred.',
+      'Finish with fresh lemon juice.',
+      'Serve immediately with your favorite side.',
+    ],
   },
   {
     id: 14,
@@ -158,6 +380,25 @@ export const recipesData = [
     servings: 3,
     favorite: false,
     image: 'https://cdn.loveandlemons.com/wp-content/uploads/2025/02/stir-fry-recipe.jpg',
+    description:
+      'A colorful medley of vegetables tossed in a savory sauce. Fast, flexible, and perfect for weeknights.',
+    ingredients: [
+      'broccoli',
+      'carrots',
+      'bell peppers',
+      'soy sauce',
+      'garlic',
+      'ginger',
+      'sesame oil',
+      'rice',
+    ],
+    instructions: [
+      'Cook the rice if serving alongside the stir fry.',
+      'Heat sesame oil in a wok or large pan.',
+      'Add garlic and ginger, then stir-fry the vegetables until crisp-tender.',
+      'Pour in soy sauce and toss everything together.',
+      'Serve hot over rice.',
+    ],
   },
   {
     id: 15,
@@ -169,6 +410,24 @@ export const recipesData = [
     servings: 4,
     favorite: true,
     image: 'https://www.cookingclassy.com/wp-content/uploads/2018/01/shredded-beef-tacos-3.jpg',
+    description:
+      'Warm tortillas filled with seasoned beef and fresh toppings. A crowd-pleasing dinner with bold flavor.',
+    ingredients: [
+      'taco shells',
+      'ground beef',
+      'lettuce',
+      'tomatoes',
+      'cheddar cheese',
+      'sour cream',
+      'taco seasoning',
+    ],
+    instructions: [
+      'Cook the ground beef in a skillet until browned.',
+      'Add taco seasoning and a splash of water, then simmer briefly.',
+      'Warm the taco shells according to package instructions.',
+      'Fill each shell with beef, lettuce, tomatoes, and cheese.',
+      'Top with sour cream and serve.',
+    ],
   },
   {
     id: 16,
@@ -180,6 +439,25 @@ export const recipesData = [
     servings: 9,
     favorite: false,
     image: 'https://ingenium.ca/agriculture/wp-content/uploads/sites/3/2024/12/brownies-recipe.jpg',
+    description:
+      'Rich and fudgy chocolate brownies with crisp edges and a soft center. A must-have for chocolate lovers.',
+    ingredients: [
+      'dark chocolate',
+      'butter',
+      'sugar',
+      'eggs',
+      'flour',
+      'cocoa powder',
+      'vanilla extract',
+      'salt',
+    ],
+    instructions: [
+      'Preheat the oven and line a square baking pan.',
+      'Melt the chocolate and butter together until smooth.',
+      'Whisk in the sugar, then add the eggs and vanilla.',
+      'Fold in the flour, cocoa powder, and salt until just combined.',
+      'Bake until the center is just set, then cool before slicing.',
+    ],
   },
   {
     id: 17,
@@ -192,6 +470,24 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.dessertfortwo.com/wp-content/uploads/2023/06/Cheesecake-Cups-5-735x1103.jpg',
+    description:
+      'Individual cheesecake cups with a creamy filling and crunchy base. Perfect for easy entertaining.',
+    ingredients: [
+      'cream cheese',
+      'biscuits',
+      'butter',
+      'sugar',
+      'vanilla extract',
+      'whipped cream',
+      'berries',
+    ],
+    instructions: [
+      'Crush the biscuits and mix them with melted butter.',
+      'Press the mixture into the bottoms of serving cups.',
+      'Beat the cream cheese with sugar and vanilla until smooth.',
+      'Fold in whipped cream for a lighter texture if desired.',
+      'Spoon the filling into the cups and chill before topping with berries.',
+    ],
   },
   {
     id: 18,
@@ -204,6 +500,16 @@ export const recipesData = [
     favorite: true,
     image:
       'https://sallysbakingaddiction.com/wp-content/uploads/2015/07/homemade-apple-crumble-pie.jpg',
+    description:
+      'Warm baked apples topped with a buttery crumb topping. Best served with vanilla ice cream.',
+    ingredients: ['apples', 'brown sugar', 'flour', 'butter', 'oats', 'cinnamon', 'nutmeg'],
+    instructions: [
+      'Preheat the oven and slice the apples.',
+      'Toss the apples with a little sugar and cinnamon, then spread in a baking dish.',
+      'Mix flour, oats, brown sugar, butter, and nutmeg until crumbly.',
+      'Scatter the crumble topping over the apples.',
+      'Bake until the apples are tender and the topping is golden.',
+    ],
   },
   {
     id: 19,
@@ -215,6 +521,25 @@ export const recipesData = [
     servings: 8,
     favorite: false,
     image: 'https://www.sweetandsavorybyshinee.com/wp-content/uploads/2025/03/Banana-Bread-10.jpg',
+    description:
+      'Moist banana bread with deep banana flavor and a tender crumb. Great for breakfast, snack, or dessert.',
+    ingredients: [
+      'ripe bananas',
+      'flour',
+      'sugar',
+      'eggs',
+      'butter',
+      'baking soda',
+      'vanilla extract',
+      'salt',
+    ],
+    instructions: [
+      'Preheat the oven and grease a loaf pan.',
+      'Mash the bananas in a large bowl.',
+      'Mix in melted butter, sugar, eggs, and vanilla.',
+      'Fold in the flour, baking soda, and salt until combined.',
+      'Pour into the pan and bake until a skewer comes out clean.',
+    ],
   },
   {
     id: 20,
@@ -226,6 +551,16 @@ export const recipesData = [
     servings: 8,
     favorite: false,
     image: 'https://www.recipetineats.com/tachyon/2021/06/French-Lemon-Tart_5-main-SQ.jpg',
+    description:
+      'A crisp tart shell filled with silky lemon cream. Bright, elegant, and perfect for special occasions.',
+    ingredients: ['flour', 'butter', 'sugar', 'eggs', 'lemons', 'cream', 'powdered sugar'],
+    instructions: [
+      'Prepare the tart dough and chill it before rolling.',
+      'Bake the tart shell until golden and let it cool.',
+      'Whisk eggs, sugar, lemon juice, zest, and cream together.',
+      'Pour the filling into the shell and bake gently until set.',
+      'Cool completely, then dust with powdered sugar before serving.',
+    ],
   },
   {
     id: 21,
@@ -238,6 +573,16 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.allrecipes.com/thmb/PT8spc1dL0IxCU5wwtkdeUTzblM=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/273916greek-yogurt-breakfast-parfaitKim4x3-9a7099bd11644bebb23a78222a616f44.jpg',
+    description:
+      'Creamy yogurt layered with fruit and granola. A fast breakfast with a fresh and crunchy finish.',
+    ingredients: ['greek yogurt', 'granola', 'berries', 'honey', 'banana', 'chia seeds'],
+    instructions: [
+      'Spoon some yogurt into a glass or bowl.',
+      'Add a layer of granola and fruit.',
+      'Repeat the layers until all ingredients are used.',
+      'Drizzle with honey and sprinkle with chia seeds.',
+      'Serve immediately for best texture.',
+    ],
   },
   {
     id: 22,
@@ -250,6 +595,24 @@ export const recipesData = [
     favorite: true,
     image:
       'https://hips.hearstapps.com/hmg-prod/images/breakfast-burrito-index-66a7e23ca6c89.jpg?crop=0.669xw:1.00xh;0.261xw,0&resize=1200:*',
+    description:
+      'A warm burrito stuffed with eggs, cheese, and breakfast fillings. Hearty, portable, and satisfying.',
+    ingredients: [
+      'tortillas',
+      'eggs',
+      'cheddar cheese',
+      'potatoes',
+      'bell peppers',
+      'sausage',
+      'salsa',
+    ],
+    instructions: [
+      'Cook the potatoes and sausage until browned.',
+      'Scramble the eggs in a separate pan.',
+      'Warm the tortillas so they are flexible.',
+      'Fill each tortilla with eggs, potatoes, sausage, cheese, and peppers.',
+      'Roll tightly and serve with salsa.',
+    ],
   },
   {
     id: 23,
@@ -262,6 +625,23 @@ export const recipesData = [
     favorite: false,
     image:
       'https://ohsweetbasil.com/wp-content/uploads/balsamic-glaze-grilled-caprese-sandwich-recipe-6-scaled.jpg',
+    description:
+      'A fresh sandwich with mozzarella, tomato, and basil. Light, simple, and full of summer flavor.',
+    ingredients: [
+      'bread',
+      'mozzarella',
+      'tomatoes',
+      'fresh basil',
+      'olive oil',
+      'balsamic glaze',
+      'salt',
+    ],
+    instructions: [
+      'Slice the bread and layer with mozzarella, tomatoes, and basil.',
+      'Drizzle with olive oil and balsamic glaze.',
+      'Season lightly with salt.',
+      'Serve fresh or grill lightly if preferred.',
+    ],
   },
   {
     id: 24,
@@ -274,6 +654,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.allrecipes.com/thmb/UeFtapHyGFBo4Lx-72GxgjrOGnk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/13978-lentil-soup-DDMFS-4x3-edfa47fc6b234e6b8add24d44c036d43.jpg',
+    description:
+      'Hearty lentil soup simmered with vegetables and spices. Nutritious, comforting, and easy to batch cook.',
+    ingredients: [
+      'lentils',
+      'carrots',
+      'celery',
+      'onion',
+      'garlic',
+      'vegetable broth',
+      'olive oil',
+      'cumin',
+    ],
+    instructions: [
+      'Sauté the onion, carrots, celery, and garlic in olive oil.',
+      'Add the lentils, broth, and cumin.',
+      'Bring to a boil, then simmer until the lentils are tender.',
+      'Adjust seasoning and add extra broth if needed.',
+      'Serve hot with bread.',
+    ],
   },
   {
     id: 25,
@@ -286,6 +685,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://spicecravings.com/wp-content/uploads/2025/07/Coconut-Curry-Chicken-New-Featured.jpg',
+    description:
+      'Tender chicken in a creamy spiced curry sauce. Bold, warming, and perfect with rice or naan.',
+    ingredients: [
+      'chicken thighs',
+      'onion',
+      'garlic',
+      'ginger',
+      'curry paste',
+      'coconut milk',
+      'tomatoes',
+      'rice',
+    ],
+    instructions: [
+      'Cook onion, garlic, and ginger until fragrant.',
+      'Add chicken and cook until lightly browned.',
+      'Stir in curry paste and tomatoes.',
+      'Pour in coconut milk and simmer until the chicken is tender.',
+      'Serve with rice.',
+    ],
   },
   {
     id: 26,
@@ -298,6 +716,25 @@ export const recipesData = [
     favorite: true,
     image:
       'https://www.panzani.com/_ipx/f_webp&q_80&s_1800x1192/https://backend.panzani.com/app/uploads/2024/07/lasagne-classique.jpg',
+    description:
+      'Layered pasta baked with rich meat sauce, béchamel, and cheese. A hearty centerpiece for family dinners.',
+    ingredients: [
+      'lasagna sheets',
+      'ground beef',
+      'tomato sauce',
+      'onion',
+      'garlic',
+      'béchamel sauce',
+      'mozzarella',
+      'parmesan',
+    ],
+    instructions: [
+      'Prepare the meat sauce by cooking onion, garlic, and beef, then adding tomato sauce.',
+      'Make or warm the béchamel sauce.',
+      'Layer sauce, pasta sheets, béchamel, and cheese in a baking dish.',
+      'Repeat the layers and finish with cheese on top.',
+      'Bake until bubbling and golden, then rest before slicing.',
+    ],
   },
   {
     id: 27,
@@ -310,6 +747,25 @@ export const recipesData = [
     favorite: false,
     image:
       'https://thescranline.com/wp-content/uploads/2022/08/VANILLA-CUPCAKES-vanilla-cupcakes-sitting-in-a-tray-with-vanilla-frosting-on-top-1.jpg',
+    description:
+      'Soft vanilla cupcakes topped with creamy frosting. A classic dessert for birthdays and celebrations.',
+    ingredients: [
+      'flour',
+      'sugar',
+      'butter',
+      'eggs',
+      'milk',
+      'vanilla extract',
+      'baking powder',
+      'frosting',
+    ],
+    instructions: [
+      'Preheat the oven and line a cupcake tray with paper liners.',
+      'Cream butter and sugar until light and fluffy.',
+      'Add eggs one at a time, then mix in vanilla.',
+      'Alternate adding dry ingredients and milk until smooth.',
+      'Bake until risen and golden, cool fully, then frost.',
+    ],
   },
   {
     id: 28,
@@ -322,6 +778,16 @@ export const recipesData = [
     favorite: false,
     image:
       'https://www.allrecipes.com/thmb/DzRDzQ4wiiV9dWWdCsn5sdXekuw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/AR-24059-creamy-rice-pudding-DDMFS-4x3-a47c1f5ad9d449c582d62e6e42da28ac.jpg',
+    description:
+      'Creamy rice pudding lightly sweetened and finished with warm spices. A simple dessert with old-fashioned charm.',
+    ingredients: ['rice', 'milk', 'sugar', 'cinnamon', 'vanilla extract', 'butter', 'raisins'],
+    instructions: [
+      'Cook the rice partially in water if needed, then add milk.',
+      'Simmer gently, stirring often, until creamy and tender.',
+      'Stir in sugar, vanilla, butter, and cinnamon.',
+      'Add raisins if using.',
+      'Serve warm or chilled.',
+    ],
   },
   {
     id: 29,
@@ -333,6 +799,25 @@ export const recipesData = [
     servings: 3,
     favorite: false,
     image: 'https://cookieandkate.com/images/2019/02/best-shakshuka-recipe-3.jpg',
+    description:
+      'Eggs poached in a rich tomato and pepper sauce. Warm, savory, and perfect with crusty bread.',
+    ingredients: [
+      'eggs',
+      'tomatoes',
+      'bell peppers',
+      'onion',
+      'garlic',
+      'olive oil',
+      'paprika',
+      'cumin',
+    ],
+    instructions: [
+      'Sauté onion and bell peppers in olive oil until soft.',
+      'Add garlic and spices and cook for another minute.',
+      'Stir in tomatoes and simmer until the sauce thickens.',
+      'Make small wells and crack in the eggs.',
+      'Cover and cook until the eggs are set to your liking.',
+    ],
   },
   {
     id: 30,
@@ -345,5 +830,24 @@ export const recipesData = [
     favorite: true,
     image:
       'https://baketotheroots.de/wp-content/uploads/2022/04/SQ_220304_Creamy-Miso-Ramen-with-Chicken-Katsu.jpg',
+    description:
+      'A comforting bowl of ramen with miso broth, noodles, and flavorful toppings. Deep, savory, and satisfying.',
+    ingredients: [
+      'ramen noodles',
+      'miso paste',
+      'chicken broth',
+      'garlic',
+      'ginger',
+      'soy sauce',
+      'mushrooms',
+      'soft-boiled eggs',
+    ],
+    instructions: [
+      'Cook the broth with garlic, ginger, miso paste, and soy sauce.',
+      'Simmer the mushrooms in the broth until tender.',
+      'Cook the ramen noodles separately according to package directions.',
+      'Divide noodles into bowls and pour the broth over them.',
+      'Top with mushrooms, soft-boiled eggs, and any extra toppings before serving.',
+    ],
   },
 ]

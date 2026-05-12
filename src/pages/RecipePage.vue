@@ -1,6 +1,7 @@
 <script setup>
 import FilterPanel from '@/components/FilterPanel.vue'
 import RecipeList from '@/components/RecipeList.vue'
+import RecipeModal from '@/components/RecipeModal.vue'
 import SearchBar from '@/components/SearchBar.vue'
 import StatsBar from '@/components/StatsBar.vue'
 import { recipesData } from '@/data/data'
@@ -13,6 +14,7 @@ const ratingValue = ref(0)
 const favoritesOnly = ref(false)
 const typeValue = ref('All')
 const showFilters = ref(false)
+const selectedRecipe = ref(null)
 
 const cookingTimes = ['All', 'Under 15 min', 'Under 30 min', 'Under 45 min', '45+ min']
 const minRatings = [0, 4, 4.5, 4.8]
@@ -85,6 +87,14 @@ const hasActiveFilters = computed(() => {
     favoritesOnly.value
   )
 })
+
+function openRecipeModal(recipe) {
+  selectedRecipe.value = recipe
+}
+
+function closeRecipeModal() {
+  selectedRecipe.value = null
+}
 </script>
 
 <template>
@@ -122,18 +132,18 @@ const hasActiveFilters = computed(() => {
       <button class="toggle-filters-btn" @click="toggleFilters">
         {{ showFilters ? 'Hide filters' : 'Show filters' }}
       </button>
-
-      <FilterPanel
-        v-if="showFilters"
-        :cookingTimes="cookingTimes"
-        :minRatings="minRatings"
-        :sortOptions="sortOptions"
-        :mealTypes="mealTypes"
-        v-model:selected-time="timeValue"
-        v-model:selected-rating="ratingValue"
-        v-model:selected-sort="sortValue"
-        v-model:selected-type="typeValue"
-      />
+      <transition name="filters-fade"
+        ><FilterPanel
+          v-if="showFilters"
+          :cookingTimes="cookingTimes"
+          :minRatings="minRatings"
+          :sortOptions="sortOptions"
+          :mealTypes="mealTypes"
+          v-model:selected-time="timeValue"
+          v-model:selected-rating="ratingValue"
+          v-model:selected-sort="sortValue"
+          v-model:selected-type="typeValue"
+      /></transition>
     </div>
 
     <StatsBar
@@ -142,7 +152,14 @@ const hasActiveFilters = computed(() => {
       :selected-rating="ratingValue"
     />
 
-    <RecipeList :recipes="filteredRecipes" @toggle-favorite="toggleFavorite" />
+    <RecipeList
+      :recipes="filteredRecipes"
+      @toggle-favorite="toggleFavorite"
+      @view-recipe="openRecipeModal"
+    />
+    <transition name="modal-fade">
+      <RecipeModal v-if="selectedRecipe" :recipe="selectedRecipe" @close="closeRecipeModal" />
+    </transition>
   </div>
 </template>
 
@@ -342,5 +359,36 @@ const hasActiveFilters = computed(() => {
   .clear-btn {
     width: 100%;
   }
+}
+
+.modal-fade-enter-active,
+.modal-fade-leave-active {
+  transition: all 0.25s ease;
+}
+
+.modal-fade-enter-from,
+.modal-fade-leave-to {
+  opacity: 0;
+  transform: scale(0.96);
+}
+
+.filters-fade-enter-active,
+.filters-fade-leave-active {
+  transition: all 0.22s ease;
+}
+
+.filters-fade-enter-from,
+.filters-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 </style>
