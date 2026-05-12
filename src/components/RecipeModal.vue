@@ -1,9 +1,34 @@
 <script setup>
-defineProps({
+import { ref, computed } from 'vue'
+
+const { recipe } = defineProps({
   recipe: Object,
 })
 
 defineEmits(['close'])
+
+const selectedServings = ref(recipe.servings)
+
+function decreaseServings() {
+  if (selectedServings.value > 1) {
+    selectedServings.value--
+  }
+}
+
+function increaseServings() {
+  selectedServings.value++
+}
+
+const scaledIngredients = computed(() => {
+  return recipe.ingredients.map((ingredient) => {
+    const scaledAmount = (ingredient.amount / recipe.servings) * selectedServings.value
+
+    return {
+      ...ingredient,
+      scaledAmount,
+    }
+  })
+})
 </script>
 
 <template>
@@ -27,7 +52,19 @@ defineEmits(['close'])
             <span><i class="fa-regular fa-clock"></i> {{ recipe.time }} min</span>
             <span><i class="fa-solid fa-star yellow"></i> {{ recipe.rating }}</span>
             <span>{{ recipe.difficulty }}</span>
-            <span>{{ recipe.servings }} servings</span>
+            <span
+              ><strong>{{ selectedServings }}</strong> servings</span
+            >
+          </div>
+        </div>
+
+        <div class="servings-control">
+          <h4>Adjust servings</h4>
+
+          <div class="servings-box">
+            <button class="servings-btn" @click="decreaseServings">-</button>
+            <span class="servings-value">{{ selectedServings }}</span>
+            <button class="servings-btn" @click="increaseServings">+</button>
           </div>
         </div>
 
@@ -35,8 +72,9 @@ defineEmits(['close'])
           <section class="modal-section">
             <h4>Ingredients</h4>
             <ul class="ingredients-list">
-              <li v-for="ingredient in recipe.ingredients" :key="ingredient">
-                {{ ingredient }}
+              <li v-for="ingredient in scaledIngredients" :key="ingredient.name">
+                <strong>{{ ingredient.scaledAmount }} {{ ingredient.unit }}</strong>
+                {{ ingredient.name }}
               </li>
             </ul>
           </section>
@@ -79,23 +117,24 @@ defineEmits(['close'])
   border: 1px solid rgba(128, 93, 62, 0.08);
   scrollbar-width: thin;
   scrollbar-color: #c8ab90 #f7efe5;
-  .modal-card::-webkit-scrollbar {
-    width: 10px;
-  }
+}
 
-  .modal-card::-webkit-scrollbar-track {
-    background: #f7efe5;
-    border-radius: 999px;
-  }
+.modal-card::-webkit-scrollbar {
+  width: 10px;
+}
 
-  .modal-card::-webkit-scrollbar-thumb {
-    background: #c8ab90;
-    border-radius: 999px;
-  }
+.modal-card::-webkit-scrollbar-track {
+  background: #f7efe5;
+  border-radius: 999px;
+}
 
-  .modal-card::-webkit-scrollbar-thumb:hover {
-    background: #b48f70;
-  }
+.modal-card::-webkit-scrollbar-thumb {
+  background: #c8ab90;
+  border-radius: 999px;
+}
+
+.modal-card::-webkit-scrollbar-thumb:hover {
+  background: #b48f70;
 }
 
 .modal-close {
@@ -126,11 +165,10 @@ defineEmits(['close'])
 }
 
 .modal-content {
-  padding: 1.5rem;
+  padding: 1.5rem 1.7rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  padding: 1.5rem 1.7rem 1.5rem 1.5rem;
 }
 
 .modal-header {
@@ -231,7 +269,57 @@ defineEmits(['close'])
 
 .ingredients-list li {
   line-height: 1.6;
-  text-transform: capitalize;
+}
+
+.servings-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 20px;
+  background: #fcf7f0;
+  border: 1px solid rgba(128, 93, 62, 0.08);
+}
+
+.servings-control h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #2f2218;
+}
+
+.servings-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.servings-btn {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(128, 93, 62, 0.12);
+  border-radius: 12px;
+  background: #fffdf9;
+  color: #6a5646;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.servings-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(153, 98, 58, 0.28);
+  color: #2f2218;
+}
+
+.servings-value {
+  min-width: 2rem;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2f2218;
 }
 
 .instructions-list {
@@ -246,6 +334,10 @@ defineEmits(['close'])
 .instructions-list li {
   line-height: 1.75;
   padding-left: 0.15rem;
+}
+
+.instructions-list li::marker {
+  font-weight: bold;
 }
 
 @media (max-width: 800px) {

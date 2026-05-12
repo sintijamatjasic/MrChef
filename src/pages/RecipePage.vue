@@ -5,7 +5,7 @@ import RecipeModal from '@/components/RecipeModal.vue'
 import SearchBar from '@/components/SearchBar.vue'
 import StatsBar from '@/components/StatsBar.vue'
 import { recipesData } from '@/data/data'
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 
 const recipes = ref(recipesData)
 const searchValue = ref('')
@@ -61,6 +61,7 @@ function toggleFavorite(recipeId) {
 
   if (recipe) {
     recipe.favorite = !recipe.favorite
+    saveFavoritesToStorage()
   }
 }
 
@@ -73,8 +74,8 @@ function clearFilters() {
   timeValue.value = 'All'
   ratingValue.value = 0
   favoritesOnly.value = false
+  typeValue.value = 'All'
   sortValue.value = 'Default'
-  favoritesOnly.value = false
   showFilters.value = false
 }
 
@@ -95,6 +96,28 @@ function openRecipeModal(recipe) {
 function closeRecipeModal() {
   selectedRecipe.value = null
 }
+
+function saveFavoritesToStorage() {
+  const favoriteIds = recipes.value.filter((recipe) => recipe.favorite).map((recipe) => recipe.id)
+
+  localStorage.setItem('favoriteRecipes', JSON.stringify(favoriteIds))
+}
+
+function loadFavoritesFromStorage() {
+  const storedFavorites = localStorage.getItem('favoriteRecipes')
+
+  if (!storedFavorites) return
+
+  const favoriteIds = JSON.parse(storedFavorites)
+
+  recipes.value.forEach((recipe) => {
+    recipe.favorite = favoriteIds.includes(recipe.id)
+  })
+}
+
+onMounted(() => {
+  loadFavoritesFromStorage()
+})
 </script>
 
 <template>
@@ -349,10 +372,6 @@ function closeRecipeModal() {
 
 @media (max-width: 920px) {
   .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .controls {
     grid-template-columns: 1fr;
   }
 
