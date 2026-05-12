@@ -8,7 +8,12 @@ defineProps({
 
 <template>
   <div class="recipe-list">
-    <RecipeCard v-for="recipe in recipes" key="recipe.id" :recipe="recipe" />
+    <RecipeCard
+      v-for="recipe in recipes"
+      key="recipe.id"
+      :recipe="recipe"
+      @toggle-favorite="$emit('toggle-favorite', $event)"
+    />
   </div>
 </template>
 

@@ -2,6 +2,7 @@
 import FilterPanel from '@/components/FilterPanel.vue'
 import RecipeList from '@/components/RecipeList.vue'
 import SearchBar from '@/components/SearchBar.vue'
+import StatsBar from '@/components/StatsBar.vue'
 import { recipesData } from '@/data/data'
 import { computed, ref } from 'vue'
 
@@ -9,12 +10,18 @@ const recipes = ref(recipesData)
 const searchValue = ref('')
 const timeValue = ref('All')
 const ratingValue = ref(0)
+const favoritesOnly = ref(false)
+const typeValue = ref('All')
+const showFilters = ref(false)
 
 const cookingTimes = ['All', 'Under 15 min', 'Under 30 min', 'Under 45 min', '45+ min']
 const minRatings = [0, 4, 4.5, 4.8]
+const sortOptions = ['Default', 'Shortest time', 'Highest rating', 'A-Z']
+const sortValue = ref('Default')
+const mealTypes = ['All', 'Breakfast', 'Lunch', 'Dinner', 'Dessert']
 
 const filteredRecipes = computed(() => {
-  return recipes.value.filter((recipe) => {
+  const filtered = recipes.value.filter((recipe) => {
     const matchesSearch = recipe.name.toLowerCase().includes(searchValue.value.toLowerCase())
     const matchesTime =
       timeValue.value === 'All' ||
@@ -27,15 +34,57 @@ const filteredRecipes = computed(() => {
       (ratingValue.value === 4 && recipe.rating >= 4) ||
       (ratingValue.value === 4.5 && recipe.rating >= 4.5) ||
       (ratingValue.value === 4.8 && recipe.rating >= 4.8)
-    return matchesSearch && matchesTime && matchesRating
+
+    const matchesType = typeValue.value === 'All' || typeValue.value === recipe.type
+
+    const matchesFavorite = !favoritesOnly.value || recipe.favorite
+    return matchesSearch && matchesTime && matchesRating && matchesFavorite && matchesType
   })
+
+  const sorted = [...filtered]
+
+  if (sortValue.value === 'Shortest time') {
+    sorted.sort((a, b) => a.time - b.time)
+  } else if (sortValue.value === 'Highest rating') {
+    sorted.sort((a, b) => b.rating - a.rating)
+  } else if (sortValue.value === 'A-Z') {
+    sorted.sort((a, b) => a.name.localeCompare(b.name))
+  }
+
+  return sorted
 })
+
+function toggleFavorite(recipeId) {
+  const recipe = recipes.value.find((item) => item.id === recipeId)
+
+  if (recipe) {
+    recipe.favorite = !recipe.favorite
+  }
+}
+
+function toggleFilters() {
+  showFilters.value = !showFilters.value
+}
 
 function clearFilters() {
   searchValue.value = ''
   timeValue.value = 'All'
   ratingValue.value = 0
+  favoritesOnly.value = false
+  sortValue.value = 'Default'
+  favoritesOnly.value = false
+  showFilters.value = false
 }
+
+const hasActiveFilters = computed(() => {
+  return (
+    searchValue.value !== '' ||
+    timeValue.value !== 'All' ||
+    ratingValue.value !== 0 ||
+    typeValue.value !== 'All' ||
+    favoritesOnly.value
+  )
+})
 </script>
 
 <template>
@@ -58,17 +107,42 @@ function clearFilters() {
     <div class="controls">
       <div class="top-row">
         <SearchBar v-model="searchValue" />
-        <button class="clear-btn" @click="clearFilters">Clear filters</button>
+        <button
+          class="favorites-btn"
+          :class="{ active: favoritesOnly }"
+          @click="favoritesOnly = !favoritesOnly"
+        >
+          {{ favoritesOnly ? 'Showing favorites' : 'Favorites only' }}
+        </button>
+        <button v-if="hasActiveFilters" class="clear-btn" @click="clearFilters">
+          Clear filters
+        </button>
       </div>
 
+      <button class="toggle-filters-btn" @click="toggleFilters">
+        {{ showFilters ? 'Hide filters' : 'Show filters' }}
+      </button>
+
       <FilterPanel
+        v-if="showFilters"
         :cookingTimes="cookingTimes"
         :minRatings="minRatings"
+        :sortOptions="sortOptions"
+        :mealTypes="mealTypes"
         v-model:selected-time="timeValue"
         v-model:selected-rating="ratingValue"
+        v-model:selected-sort="sortValue"
+        v-model:selected-type="typeValue"
       />
     </div>
-    <RecipeList :recipes="filteredRecipes" />
+
+    <StatsBar
+      :count="filteredRecipes.length"
+      :selected-time="timeValue"
+      :selected-rating="ratingValue"
+    />
+
+    <RecipeList :recipes="filteredRecipes" @toggle-favorite="toggleFavorite" />
   </div>
 </template>
 
@@ -90,6 +164,40 @@ function clearFilters() {
   background: linear-gradient(135deg, #fffaf3, #f3e7d8);
   border: 1px solid rgba(120, 85, 49, 0.08);
   box-shadow: 0 20px 50px rgba(79, 50, 26, 0.08);
+}
+
+.favorites-btn {
+  border: 1px solid rgba(128, 93, 62, 0.12);
+  background: #fffdf9;
+  color: #6a5646;
+  padding: 0.9rem 1.15rem;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 18px rgba(79, 50, 26, 0.05);
+  white-space: nowrap;
+}
+
+.favorites-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(181, 109, 56, 0.28);
+  color: #2f2218;
+}
+
+.favorites-btn.active {
+  background: linear-gradient(180deg, #d98c53, #c17139);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 12px 22px rgba(193, 113, 57, 0.18);
+}
+
+.favorites-btn:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(193, 113, 57, 0.14),
+    0 12px 22px rgba(193, 113, 57, 0.18);
 }
 
 .hero-content {
@@ -168,6 +276,58 @@ function clearFilters() {
   box-shadow:
     0 0 0 4px rgba(153, 98, 58, 0.18),
     0 14px 28px rgba(115, 73, 39, 0.2);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.top-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.toggle-filters-btn {
+  align-self: flex-start;
+  border: 1px solid rgba(128, 93, 62, 0.12);
+  background: #fffdf9;
+  color: #6a5646;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 18px rgba(79, 50, 26, 0.05);
+}
+
+.toggle-filters-btn:hover {
+  transform: translateY(-1px);
+  border-color: rgba(153, 98, 58, 0.28);
+  color: #2f2218;
+}
+
+.toggle-filters-btn:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(153, 98, 58, 0.12),
+    0 10px 18px rgba(79, 50, 26, 0.05);
+}
+
+@media (max-width: 920px) {
+  .top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .clear-btn,
+  .favorites-btn {
+    width: 100%;
+  }
 }
 
 @media (max-width: 920px) {

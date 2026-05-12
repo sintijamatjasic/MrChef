@@ -25,7 +25,13 @@ defineProps({
         <div class="recipe-bottom">
           <span></span>
 
-          <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+          <button
+            @click="$emit('toggle-favorite', recipe.id)"
+            class="favorite-btn"
+            :class="{ active: recipe.favorite }"
+          >
+            <i :class="recipe.favorite ? 'fa-solid fa-heart' : 'fa-regular fa-heart'"></i>
+          </button>
         </div>
       </div>
     </article>

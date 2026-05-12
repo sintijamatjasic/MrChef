@@ -1,7 +1,22 @@
-<script setup></script>
+<script setup>
+defineProps({
+  count: Number,
+  selectedTime: String,
+  selectedRating: Number,
+})
+</script>
 
 <template>
-  <div></div>
+  <div class="stats-bar">
+    <strong>{{ count }} recipes found</strong>
+
+    <span class="muted">Time: {{ selectedTime }}</span>
+
+    <span class="muted">
+      Rating:
+      {{ selectedRating === 0 ? 'All ratings' : `${selectedRating}+` }}
+    </span>
+  </div>
 </template>
 
 <style scoped>
