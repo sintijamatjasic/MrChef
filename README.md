@@ -1,5 +1,9 @@
 # Mr Chef
 
+🔴 **Live Demo:** (https://mr-chef-recipes.netlify.app/)
+
+## About
+
 Mr Chef is a recipe browsing app built with Vue.
 
 I made this project to practice working with component structure, filtering, modals, favorites, localStorage, and responsive UI styling in a more polished, product-style layout.
