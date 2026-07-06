@@ -19,7 +19,7 @@ const model = defineModel({ default: '' })
   width: 100%;
   height: 58px;
   padding: 0.95rem 1rem 0.95rem 3rem;
-  border-radius: 18px;
+  border-radius: 10px;
   border: 1px solid rgba(128, 93, 62, 0.12);
   background: #fffdf9;
   color: #2f2218;

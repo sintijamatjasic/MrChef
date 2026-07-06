@@ -99,7 +99,7 @@ const selectedType = defineModel('selected-type', { default: 'All' })
   gap: 0.55rem;
   min-width: 0;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background: rgba(255, 251, 245, 0.9);
   border: 1px solid rgba(128, 93, 62, 0.08);
   box-shadow: 0 10px 20px rgba(79, 50, 26, 0.04);
@@ -125,7 +125,7 @@ const selectedType = defineModel('selected-type', { default: 'All' })
   background: #fffdf9;
   color: #6a5646;
   padding: 0.72rem 1rem;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 600;
   cursor: pointer;

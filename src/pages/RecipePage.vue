@@ -200,7 +200,7 @@ onMounted(() => {
   align-items: stretch;
   margin-bottom: 1.5rem;
   padding: 1.4rem;
-  border-radius: 30px;
+  border-radius: 10px;
   background: linear-gradient(135deg, #fffaf3, #f3e7d8);
   border: 1px solid rgba(120, 85, 49, 0.08);
   box-shadow: 0 20px 50px rgba(79, 50, 26, 0.08);
@@ -211,7 +211,7 @@ onMounted(() => {
   background: #fffdf9;
   color: #6a5646;
   padding: 0.9rem 1.15rem;
-  border-radius: 16px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -269,7 +269,7 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   min-height: 320px;
-  border-radius: 24px;
+  border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 16px 36px rgba(79, 50, 26, 0.12);
 }
@@ -293,7 +293,7 @@ onMounted(() => {
   background: linear-gradient(180deg, #8a5933, #734927);
   color: white;
   padding: 0.9rem 1.2rem;
-  border-radius: 16px;
+  border-radius: 10px;
   font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
@@ -338,7 +338,7 @@ onMounted(() => {
   background: #fffdf9;
   color: #6a5646;
   padding: 0.75rem 1rem;
-  border-radius: 14px;
+  border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;

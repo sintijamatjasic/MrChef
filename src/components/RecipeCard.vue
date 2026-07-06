@@ -41,7 +41,7 @@ defineProps({
 <style scoped>
 .recipe-card {
   overflow: hidden;
-  border-radius: 26px;
+  border-radius: 10px;
   background: #fffdf9;
   border: 1px solid rgba(128, 93, 62, 0.08);
   box-shadow:
@@ -122,7 +122,7 @@ defineProps({
 
 .recipe-meta span {
   padding: 0.38rem 0.62rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #f8f2ea;
 }
 
@@ -139,7 +139,7 @@ defineProps({
   background: #fffdf9;
   color: #6a5646;
   padding: 0.72rem 1rem;
-  border-radius: 999px;
+  border-radius: 10px;
   font-size: 0.92rem;
   font-weight: 600;
   cursor: pointer;
@@ -164,7 +164,7 @@ defineProps({
   width: 42px;
   height: 42px;
   border: 1px solid rgba(128, 93, 62, 0.1);
-  border-radius: 14px;
+  border-radius: 10px;
   background: #fff8f1;
   color: #b18b74;
   display: inline-flex;

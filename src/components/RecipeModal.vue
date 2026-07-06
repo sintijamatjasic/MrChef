@@ -112,7 +112,7 @@ const scaledIngredients = computed(() => {
   max-height: 90vh;
   overflow: auto;
   background: #fffdf9;
-  border-radius: 28px;
+  border-radius: 10px;
   box-shadow: 0 30px 80px rgba(47, 34, 24, 0.22);
   border: 1px solid rgba(128, 93, 62, 0.08);
   scrollbar-width: thin;
@@ -144,7 +144,7 @@ const scaledIngredients = computed(() => {
   width: 42px;
   height: 42px;
   border: none;
-  border-radius: 14px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.92);
   color: #6a5646;
   cursor: pointer;
@@ -188,7 +188,7 @@ const scaledIngredients = computed(() => {
   align-items: center;
   align-self: flex-start;
   padding: 0.42rem 0.8rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #f3e4d4;
   color: #9b633a;
   font-size: 0.8rem;
@@ -222,7 +222,7 @@ const scaledIngredients = computed(() => {
 
 .modal-meta span {
   padding: 0.45rem 0.75rem;
-  border-radius: 999px;
+  border-radius: 10px;
   background: #f8f2ea;
   display: inline-flex;
   align-items: center;
@@ -245,7 +245,7 @@ const scaledIngredients = computed(() => {
   flex-direction: column;
   gap: 0.85rem;
   padding: 1rem;
-  border-radius: 22px;
+  border-radius: 10px;
   background: #fcf7f0;
   border: 1px solid rgba(128, 93, 62, 0.08);
 }
@@ -277,7 +277,7 @@ const scaledIngredients = computed(() => {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 10px;
   background: #fcf7f0;
   border: 1px solid rgba(128, 93, 62, 0.08);
 }
@@ -299,7 +299,7 @@ const scaledIngredients = computed(() => {
   width: 38px;
   height: 38px;
   border: 1px solid rgba(128, 93, 62, 0.12);
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fffdf9;
   color: #6a5646;
   font-size: 1.2rem;
