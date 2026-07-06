@@ -47,7 +47,7 @@ Favorites are saved with `localStorage`, so they stay there after refresh.
 
 ### Main page
 
-![Main page](/src/screenshots/main-page.png)
+![Main page](/src/screenshots/mainpage.png)
 
 ### Filters
 
@@ -59,7 +59,7 @@ Favorites are saved with `localStorage`, so they stay there after refresh.
 
 ### Recipe modal with serving size adjustment
 
-![Recipe modal](/src/screenshots/recipe-modal.png)
+![Recipe modal](/src/screenshots/recipemodal.png)
 
 ## Run locally
 
